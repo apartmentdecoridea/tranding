@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px; /* Ukuran dasar yang nyaman dibaca */
+    line-height: 1.6;
+    background-color: #f9f9f9; 
+    color: #333333;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+/* HEADER */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 0.8rem 0; /* Diperkecil agar lebih efisien */
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-link { text-decoration: none; }
+.logo {
+    font-size: 1.6rem; /* Diperkecil sedikit agar lebih elegan */
+    font-weight: 700;
+    color: #4a8a4f;
+    letter-spacing: -0.5px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem; /* Dirapatkan sedikit */
+}
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+nav a:hover { color: #4a8a4f; }
+
+/* HERO SECTION */
+.hero {
+    background-color: #eef2ef;
+    padding: 2rem 0; /* Mengurangi ruang kosong berlebih di atas dan bawah */
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.hero h1 {
+    font-size: 2.2rem; /* Ukuran lebih proporsional untuk laptop */
+    margin-bottom: 0.6rem;
+    color: #222;
+    line-height: 1.2;
+}
+.hero p {
+    font-size: 1.05rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* GRID CONTENT (WIDGET/KARTU) */
+.content-grid {
+    display: grid;
+    /* Lebar minimum kartu disesuaikan agar grid lebih padat */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px; /* Jarak antar kartu dirapatkan */
+}
+.content-card {
+    background-color: #fff;
+    border-radius: 6px; /* Sudut lebih tajam/profesional */
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.content-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.content-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.content-card img {
+    width: 100%;
+    height: 200px; /* Gambar dibuat lebih pendek agar isi teks lebih terlihat */
+    object-fit: cover;
+    display: block;
+}
+.content-card-body {
+    padding: 12px 14px; /* Padding dirapatkan */
+}
+.content-card-body h2, .content-card-body h3 {
+    font-size: 1.05rem; /* Ukuran pas, tidak terlalu besar */
+    margin-bottom: 0;
+    color: #333;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+/* DETAIL ARTICLE */
+.main-article {
+    background: #fff;
+    padding: 25px; /* Mengurangi ruang kosong berlebih */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin: 20px 0;
+}
+.detail-image img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.article-content {
+    font-size: 1.05rem; /* Ukuran baca standar modern (sekitar 17px) */
+    line-height: 1.7;
+    color: #333;
+}
+.article-content h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+.article-content p {
+    margin-bottom: 1.2rem;
+}
+.related-posts-section {
+    margin: 30px 0;
+}
+.related-posts-section h3 {
+    margin-bottom: 1.2rem;
+    text-align: center;
+    font-size: 1.5rem; /* Lebih proporsional dari 1.8rem */
+    color: #222;
+}
+
+/* LOADER */
+.loader {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #666;
+    display: none;
+}
+
+/* FOOTER */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+/* ================================================= */
+/* RESPONSIVE DESIGN (MOBILE & TABLET)               */
+/* ================================================= */
+@media screen and (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 0;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 0;
+    }
+    nav a {
+        font-size: 0.9rem;
+    }
+    .hero {
+        padding: 1.5rem 0; /* Lebih efisien di layar kecil */
+        margin-bottom: 1rem;
+    }
+    .hero h1 {
+        font-size: 1.6rem; /* Disesuaikan untuk HP agar tidak makan tempat */
+    }
+    .hero p {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+    .content-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px; /* Jarak antar artikel di HP dirapatkan */
+    }
+    .content-card img {
+        height: 160px; /* Gambar lebih efisien di layar kecil */
+    }
+    .content-card-body {
+        padding: 10px;
+    }
+    .content-card-body h2, .content-card-body h3 {
+        font-size: 0.95rem;
+    }
+    .main-article {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    .article-content {
+        font-size: 1rem; /* Ukuran baca optimal untuk ponsel */
+        line-height: 1.6;
+    }
+    .article-content h1 {
+        font-size: 1.6rem;
+    }
+    .related-posts-section h3 {
+        font-size: 1.3rem;
+    }
+}
